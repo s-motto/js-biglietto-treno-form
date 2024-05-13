@@ -14,15 +14,7 @@ ticketPrice.addEventListener('submit', function (event) {
 
     let finalPrice = '';
 
-    if (age != Number || kmNumber != Number) {
-        document.getElementById('ticket-fail').classList.toggle('d-none');
-
-    }
-    else if (age == null || kmNumber == null) {
-        document.getElementById('ticket-fail').classList.toggle('d-none');
-
-    }
-    else if (age < 18) {
+    if (age < 18) {
         finalPrice = Number(price - (price * underEighteenDiscount)).toFixed(2);
         document.getElementById('discount').innerText = 'Complimenti, hai diritto a uno sconto del 20%!';
         document.getElementById('ticket-result').classList.toggle('d-none');
@@ -33,10 +25,18 @@ ticketPrice.addEventListener('submit', function (event) {
         document.getElementById('ticket-result').classList.toggle('d-none');
 
     }
+    else if (age !== Number || kmNumber !== Number) {
+        document.getElementById('ticket-fail').classList.toggle('d-none');
+
+    }
+
     else {
         finalPrice = Number(price).toFixed(2)
         document.getElementById('ticket-result').classList.toggle('d-none');
     };
+
+
+
 
 
     document.getElementById('final-price').innerText = `${finalPrice}`;
