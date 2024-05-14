@@ -24,16 +24,12 @@ ticketPrice.addEventListener('submit', function (event) {
         document.getElementById('discount').innerText = 'Complimenti, hai diritto a uno sconto del 40%!';
         document.getElementById('ticket-result').classList.toggle('d-none');
     }
-    else if (age >= 18) {
+
+    else if (18 < age < 64) {
         finalPrice = Number(price).toFixed(2);
         document.getElementById('ticket-result').classList.toggle('d-none');
     }
-    else if (!Number.isNaN(age)) {
-        document.getElementById('ticket-fail').classList.toggle('d-none');
-    }
-    else {
-        document.getElementById('ticket-fail').classList.toggle('d-none');
-    };
+    ;
 
     document.getElementById('final-price').innerText = `${finalPrice}`;
     console.log('ho inviato il form');
@@ -43,6 +39,7 @@ ticketPrice.addEventListener('submit', function (event) {
 
 
 document.getElementById('reset-button').addEventListener('click', function () {
+
     document.getElementById('ticket-result').classList.add('d-none');
     document.getElementById('ticket-fail').classList.add('d-none');
     document.getElementById('km-num').innerText = '';
