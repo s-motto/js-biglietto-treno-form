@@ -11,7 +11,14 @@ body {
     background-color: #F7EBE8;
 }
 
-#ticket-result #ticket-fail {
+#ticket-result {
+    width: 50%;
+    background-color: #444140;
+    color: #F7EBE8;
+
+}
+
+#ticket-fail {
     width: 50%;
     background-color: #444140;
     color: #F7EBE8;
