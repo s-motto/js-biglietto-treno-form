@@ -25,11 +25,10 @@ ticketPrice.addEventListener('submit', function (event) {
         document.getElementById('ticket-result').classList.toggle('d-none');
     }
 
-    else if (18 < age < 64) {
+    else {
         finalPrice = Number(price).toFixed(2);
         document.getElementById('ticket-result').classList.toggle('d-none');
-    }
-    ;
+    };
 
     document.getElementById('final-price').innerText = `${finalPrice}`;
     console.log('ho inviato il form');
